@@ -1,15 +1,19 @@
 # shift-ctl
 Manage calamari.io shifts from command line
 
+## Disclaimer
+This software is provided "AS IS", without waranty of any kind. In no event shall the calamari.io company be liable for any claim, damages or other liability. USE AT YOUR OWN RISK!
+
+## Prerequisites
+For successfull installation you need [pipenv](https://pipenv.pypa.io/en/latest/). Type:
+
+```pip3 install pipenv```
+
 ## Installation
 
 Clone this repository:
 
 ```git clone https://github.com/calamari-io/shift-ctl.git```
-
-For successfull installation you need [pipenv](https://pipenv.pypa.io/en/latest/). Type:
-
-```pip3 install pipenv```
 
 To install all requirements, simply type:
 
