@@ -53,14 +53,14 @@ options:
 Listing shifts for specific users(s):
 
 ```
-# pipenv run ./shifts_ctl.py list -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io
+# pipenv run ./shifts_ctl.py list -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io
 ```
 `<START_DATE>/<END_DATE>` - dates in `YYYY-MM-DD` format
 
 Listing shifts for all users in organization:
 
 ```
-# pipenv run ./shifts_ctl.py list -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -a
+# pipenv run ./shifts_ctl.py list -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -a
 ```
 
 ### Creating shifts
@@ -70,13 +70,13 @@ Shifts will be created according to users work schedule.
 Create shifts for specific user(s):
 
 ```
-# pipenv run ./shifts_ctl.py create -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io
+# pipenv run ./shifts_ctl.py create -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io
 ```
 
 Create shifts for all users in organization:
 
 ```
-# pipenv run ./shifts_ctl.py list -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -a
+# pipenv run ./shifts_ctl.py list -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -a
 ```
 
 ### Delete shifts
@@ -86,17 +86,17 @@ Script will ask you to review shifts that you're planning to delete and to confi
 Delete shifts for specific user(s):
 
 ```
-# pipenv run ./shifts_ctl.py delete -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io
+# pipenv run ./shifts_ctl.py delete -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io
 ```
 
 Delete shifts for specific user(s), no questions asked:
 
 ```
-# pipenv run ./shifts_ctl.py delete -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io --force
+# pipenv run ./shifts_ctl.py delete -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -e user1@yourdomain.io,user2@yourdomain.io --force
 ```
 
 Delete shifts for all users in organization:
 
 ```
-# pipenv run ./shifts_ctl.py delete -k <API_KEY> -b <BASE_URL> -f '<START_DATE>' -t '<END_DATE>' -a
+# pipenv run ./shifts_ctl.py delete -k '<API_KEY>' -b '<BASE_URL>' -f '<START_DATE>' -t '<END_DATE>' -a
 ```
