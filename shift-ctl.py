@@ -148,7 +148,7 @@ def main(args):
   
 
 if __name__ == '__main__':
-  parser = argparse.ArgumentParser(prog='shifts_ctl.py', usage='%(prog)s [options]')
+  parser = argparse.ArgumentParser(prog='shif-ctl.py', usage='%(prog)s [options]')
   parser.add_argument('action', choices=['list','delete','create'], help="Action to perform")
   parser.add_argument('-k','--api-key', required=True, help='API Key - can be found in Configuration->Integrations->API')
   parser.add_argument('-b','--base-url', required=True, help='API Base URL - can be found in Configuration->Integrations->API. I.e. https://sample-tenant.us.calamari.io/api/')
