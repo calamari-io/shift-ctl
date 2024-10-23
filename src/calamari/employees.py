@@ -1,4 +1,5 @@
 import requests
+import json
 from ratelimit import limits, sleep_and_retry
 
 MAX_CALLS_PER_SECOND=10
@@ -29,14 +30,14 @@ def get_users(base_url, auth_basic, page):
 @limits(calls=MAX_CALLS_PER_HOUR, period=3600)
 @sleep_and_retry
 @limits(calls=MAX_CALLS_PER_SECOND, period=1)
-def get_user(base_url, auth_basic, user):
+def get_user(base_url, auth_basic, user, archived):
   endpoint_url=base_url+'employees/v1/search'
   payload = {
     "employee": user,
     "contractTypes": [],
     "positions": [],
     "teams": [],
-    "withArchived": False
+    "withArchived": archived
   }
 
   response = requests.post(
@@ -46,6 +47,22 @@ def get_user(base_url, auth_basic, user):
   )
   if response.status_code != 200:
     print('Error getting user',user,'Error: [',response.status_code,']: ',response.text)
+  
+  return response
+
+def archive_user(base_url, auth_basic, user):
+  endpoint_url=base_url+'employees/v1/archive'
+  payload = {
+    "employee": user,
+  }
+
+  response = requests.post(
+     endpoint_url,
+     json=payload,
+     auth=auth_basic
+  )
+  if response.status_code != 204:
+    print('Error archiving user',user,'Error: [',response.status_code,']: ',response.text)
   
   return response
 

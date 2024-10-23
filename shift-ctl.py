@@ -48,7 +48,7 @@ def main(args):
     if '@' not in employee:
       print('Error',employee,'doesn\'t seem to be valid email address. Skipping.')
       continue 
-    user=employees.get_user(base_url, auth_basic, employee)
+    user=employees.get_user(base_url, auth_basic, employee, args.archived)
     if user.status_code != 200:
       continue
 
@@ -155,6 +155,7 @@ if __name__ == '__main__':
   parser.add_argument('-f', '--date-from', required=True, help='Start date in \'YYYY-MM-DD\' format') 
   parser.add_argument('-t', '--date-to', required=False, help='End data. Today\'s date if empty') 
   parser.add_argument('--force', required=False, action='store_true', default=False,  help="Force delete without any prompts for confirmation")
+  parser.add_argument('--archived', required=False, action='store_true', default=False,  help="Take into account archived users.")
   users = parser.add_mutually_exclusive_group(required=True) 
   users.add_argument('-e', '--employees', help='Comma-separated list of employees emails. Can\'t be used with -a')
   users.add_argument('-a', '--all', action='store_true', default=False,  help='Run for all users. Can\'t be used with -e')
